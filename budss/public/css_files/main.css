@@ -488,15 +488,6 @@
 .top_conteiner_info_button{
     text-align: center;
 }
-.top_conteiner_info_button button{
-    max-width: 182;
-    max-height: 57;
-    background-color: rgba(149, 76, 237, 1);
-    padding: 16px 30px;
-    border-radius: 20px;
-    color:white;
-    font-size: 20px;
-}
 
 .business_budss_middle{
     width: 100%;
