@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/budss/public/css_files/header.css">
     <link rel="stylesheet" href="/budss/public/css_files/main.css">
     <link rel="stylesheet" href="/budss/public/css_files/footer.css">
+    <link rel="stylesheet" href="/budss/public/css_files/modal.css">
     <title>Budds</title>
 </head>
 <body>
@@ -313,5 +314,42 @@
             </div>
         </div>
     </footer>
+    <div class="modal">
+        <div class="modal_body">
+            <a href="" class="modal_close">
+                <img src="/budss/public/img_files/icon_close.svg" alt="">
+            </a>
+            <div class="modal_content">
+                <form action="index.html" class="modal_form">
+                    <div class="form_field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form_field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form_field">
+                        <label for="phone">Phone number</label>
+                        <input type="number" name="phone" id="phone" placeholder="+7 987 654 32 10" required>
+                    </div>
+                    <div class="form_field">
+                        <label for="company">Company</label>
+                        <input type="text" name="company" id="company" placeholder="Enter company">
+                    </div>
+                    <div class="form_field">
+                        <label for="website">Website/Store URL</label>
+                        <input type="text" name="website" id="website" placeholder="Enter Website/Store URL">
+                    </div>
+                </form>
+                <div class="modal_info">
+                    <p>By submitting this form you are agreeing to Budss’s  <a href="">Privacy Policy</a> and <a href="">Terms of Use</a></p>
+                </div>
+                <div class="modal_button">
+                    <button type="submit" class="btn grey">Contact sales</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
