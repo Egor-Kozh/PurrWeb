@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clock.css">
+    <title>Clock</title>
+</head>
+<body>
+    <script src="clock.js"></script>
+    <div class="clock_conteiner">
+        <div class="block_clock">
+            <div class="clock">
+                <img src="/clock/public/img_clock.png" alt="clock">
+                <div class="hour" id="hr" ></div>
+                <div class="min" id="mn" ></div>
+                <div class="sec" id="sc" ></div>
+            </div>
+        </div>
+        <div class="block_panel">
+            <div class="panel">
+                <button onclick="clock.TurnOn()" class="buttonOn">Start</button>
+                <button onclick="clock.TurnOff()" class="buttonOff">Stop</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

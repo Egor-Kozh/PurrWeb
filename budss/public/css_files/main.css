@@ -1,0 +1,543 @@
+.main{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    row-gap: 100px;
+}
+
+/* Hero */
+
+.main_hero{
+    width: 100%;
+    height: 600px;
+}
+
+.hero_conteiner{
+    padding: 70px 0 0 60px;
+    width: auto;
+    height: 530px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero_info{
+    width: 670px;
+    height: 370px;
+}
+
+.hero_tittle{
+    width: 100%;
+    height: fit-content;
+
+    text-align:left ;
+    font-size: 96px;
+    gap: 40px;
+}
+
+.hero_text{
+    position: relative;
+    width: 100%;
+    height: 70px;
+
+    font-size: 20px;
+    text-align: left;
+    font-family: "Outfit_Regular";
+}
+.hero_text p{
+    position: absolute;
+    bottom: 0px;
+}
+
+.hero_button{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+.hero_button button{
+    position: absolute;
+    bottom: 0px;
+}
+
+.hero_logo{
+    width: 595px;
+    height: 530px;
+}
+
+
+
+/* About */
+
+.main_about{
+    width: 100%;
+    height: 953px;
+}
+
+.about_tittle{
+    margin-left: 60px;
+    font-size: 96px;
+}
+
+.about_conteiner{
+    position: relative;
+    width: auto;
+    height: 760px;
+    padding-top: 70px;
+    padding-left: 60px;
+
+    display: grid;
+    column-gap: 10%;
+    grid-template-rows: 100% ;
+    grid-template-columns: 400px auto;
+}
+
+.left-info_text{
+    position: relative;
+    width: 410px;
+    height: 140px;
+    font-size: 36px;
+
+    font-family: "Outfit_SemiBold";
+}
+.left-info_text::before{
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 40px;
+    bottom: 2px;
+    transform: rotate(-2deg);
+    right: 0;
+    z-index: -1;
+    border-radius: 30px;
+    background-color: rgba(166, 76, 237, 1);
+}
+
+.about_img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.conteiner_list-info{
+    display: grid;
+    row-gap: 20px;
+    column-gap: 60px;
+    grid-template-rows: 350px 350px;
+    grid-template-columns: 380px 380px;
+}
+
+.conteiner_item-info{
+    width: 100%;
+    height: 100%;
+}
+
+.item_logo{
+    width: 100%;
+    height: 120px;
+}
+
+.item_tittle{
+    font-size: 48px;
+    padding-bottom: 20px;
+}
+
+.item_description{
+    font-size: 24px;
+    gap: 20px;
+    font-family: "Outfit_Regular";
+}
+
+/* Works */
+
+.how_works{
+    position: relative;
+    width: 100%;
+    max-height: 640px;
+}
+
+.background_info{
+    width: 100%;
+    margin: 35px 0;
+    display: grid;
+    gap: 80px;
+    grid-template-rows: 136px 136px 136px;
+    grid-template-columns: 100%;
+    z-index: -1;
+
+    align-items: center;
+    font-size: 128px;
+}
+
+.background_text{
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.ul_text_content{
+    width: 100%;
+    color: rgba(24, 24, 24, 1);
+    text-shadow: 1px 0 0 rgba(68, 68, 68, 1), 
+    0 1px 0 rgba(68, 68, 68, 1), 
+    -1px 0 0 rgba(68, 68, 68, 1),
+     0 -1px 0 rgba(68, 68, 68, 1);
+
+    display: flex;
+    flex-direction: row;
+}
+
+.anim_left{
+    animation: running-text_left 20s linear infinite;
+}
+.anim_rigth{
+    animation: running-text_rigth 20s linear infinite;
+}
+
+.ul_text_content li{
+    white-space: nowrap;
+    padding-right: 20px;
+}
+.colored1{
+    -webkit-text-stroke: 0;
+    color: rgba(47, 219, 188, 1)
+}
+.colored2{
+    -webkit-text-stroke: 0;
+    color: rgba(149, 76, 237, 1)
+}
+.colored3{
+    -webkit-text-stroke: 0;
+    color: rgba(255, 170, 76, 1);
+}
+
+@keyframes running-text_rigth{
+    100%{
+        transform: translateX(-4%);
+    }
+
+    0%{
+        transform: translateX(-150%);
+    }
+} 
+
+@keyframes running-text_left{
+    0%{
+        transform: translateX(-4%);
+    }
+
+    100%{
+        transform: translateX(-150%);
+    }
+} 
+
+.phone{
+    position: absolute;
+    left: 566px;
+    top: 7px;
+}
+
+/*  */
+
+.why_budds_and_buisness_budss{
+    width: 100%;
+}
+
+/* Why budss */
+
+.why_budss{
+    width: 100%;
+    height: 1422px;
+}
+
+.top_info{
+    width: 100%;
+    height: 222px;
+    display: flex;
+    justify-content: center;
+
+    background-color: rgba(149, 76, 237, 1);
+}
+
+.top_info-conteiner{
+    min-width: 500px;
+    max-width: fit-content;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 100px;
+
+    align-items: center;
+}
+
+.top_info-item{
+    height: 142px;
+    width: fit-content;
+    max-width: 220px;
+
+    margin: 0 auto;
+}
+.top-item_tittle{
+    font-size: 64px;
+}
+.top-item_info{
+    font-size: 24px;
+    font-family: "Outfit_SemiBold";
+}
+
+.why_budss_conteiner{
+    width: 100%;
+    height: 1200px;
+}
+
+.why_budds_tittle{
+    width: 680px;
+    height: 178px;
+    margin: 80px auto 0 auto;
+}
+
+.tittle_header{
+    font-size: 64px;
+    text-align: center;
+}
+
+.tittle_info{
+    position: relative;
+    font-size: 36px;
+    text-align: center;
+    font-family: "Outfit_SemiBold";
+}       
+
+.tittle_info::before{
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 40px;
+    bottom: 0px;
+    transform: rotate(-2deg);
+    right: 22%;
+    z-index: -1;
+    border-radius: 30px;
+    background-color: rgba(166, 76, 237, 1);
+}
+
+.why_budss_main{
+    max-width: 100%;
+    max-height: 944px;
+    padding: 100px 70px;
+}
+
+.main_item-list{
+    width: auto;
+    height: 744px;
+
+    display: grid;
+    grid-template-rows: 362px;
+    gap: 20px;
+}
+
+.main_item-list_top{
+    display: grid;
+    grid-template-columns: 733px 547px;
+    gap: 20px;
+}
+
+.main_item-list_bottom{
+    display: grid;
+    grid-template-columns: 547px 733px;
+    gap: 20px;
+}
+
+.why_budss_item{
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(245, 245, 245, 1);
+    border-radius: 30px;
+    color: rgba(0, 0, 0, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.why_budss_item_info_tittle{
+    font-size: 48px;
+    line-height: 60.5px;
+}
+
+.why_budss_item_info_description{
+    font-size: 20px;
+    padding-top: 20px;
+    line-height: 24px;
+    font-family: "Outfit_Regular";
+}
+
+.tl_info{
+    width: 364px;
+    height: 272px;
+
+    position: absolute;
+    top: 40px;
+    left: 329px;
+}
+.tl img{
+    position: absolute;
+}
+
+.tr_info{
+    width: 416px;
+    height: 236px;
+
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.tr .img1{
+    position: absolute;
+    top: 80px;
+    left: 459px;
+}
+.tr .img2{
+    position: absolute;
+    top: 276px;
+    left: 394px;
+}
+.tr .img3{
+    position: absolute;
+    top: 298px;
+    left: 72px;
+}
+
+.bl_info{
+    width: 440px;
+    height: 272px;
+
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.bl img{
+    position: absolute;
+    top: 279px;
+    left: 345px;
+}
+
+.br_info{
+    width: 402px;
+    height: 236px;
+
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+.br img{
+    position: absolute;
+    top: 61px;
+    left: 480px;
+}
+
+/* Buisness Budss */
+
+.business_budss{
+    width: 100%;
+    height: 1017px;
+
+    padding: 100px 0 100px 0;
+
+    display: grid;
+    row-gap: 100px;
+
+    background-color: rgba(245, 245, 245, 1);
+    color: rgba(0, 0, 0, 1);
+}
+
+.business_budss_top{
+    width: 100%;
+    height: 285px;
+}
+
+.business_budss_top_conteiner{
+    width: 1320px;
+    height: 100%;
+    
+    margin: 0 auto;
+
+    border: 1px solid rgba(207, 207, 207, 1);
+    border-radius: 60px;
+}
+
+.top_conteiner_info{
+    height: 100%;
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+
+    margin: 0 auto;
+}
+
+.top_conteiner_info_tittle{
+    font-size: 64px;
+}
+
+.top_conteiner_info_button{
+    text-align: center;
+}
+.top_conteiner_info_button button{
+    max-width: 182;
+    max-height: 57;
+    background-color: rgba(149, 76, 237, 1);
+    padding: 16px 30px;
+    border-radius: 20px;
+    color:white;
+    font-size: 20px;
+}
+
+.business_budss_middle{
+    width: 100%;
+    height: 272px;
+    position: relative;
+}
+
+.business_budss_middle_conteiner{
+    width: 822px;
+    height: 100%;
+
+    margin-left: 60px;
+}
+
+.middle_conteiner_info_tittle{
+    width: 100%;
+    height: 204px;
+
+    line-height: 101px;
+    font-size: 96px;
+}
+
+.middle_conteiner_info_description{
+    width: 540px;
+    height: 68px;
+
+    font-size: 20px;
+    font-family: "Outfit_Regular";
+}
+
+.business_budss_bottom{
+    width: 100%;
+    height: 60px;
+}
+
+.business_budss_bottom_list{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content:space-evenly;
+    column-gap: 20px;
+    align-items: center;
+}
+.business_budss_bottom_list li{
+    height: 100%;
+    width: fit-content;
+}
