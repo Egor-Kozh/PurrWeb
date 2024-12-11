@@ -1,20 +1,23 @@
 .main{
     width: 100%;
     height: fit-content;
+
     display: grid;
+    grid-template-columns: 100%;
+
     row-gap: 100px;
 }
 
 /* Hero */
 
 .main_hero{
-    width: 100%;
+    max-width: 100%;
     height: 600px;
 }
 
 .hero_conteiner{
     padding: 70px 0 0 60px;
-    width: auto;
+    max-width: 1440px;
     height: 530px;
     
     display: flex;
@@ -22,8 +25,8 @@
 }
 
 .hero_info{
-    width: 670px;
-    height: 370px;
+    width: 671px;
+    height: 369px;
 }
 
 .hero_tittle{
