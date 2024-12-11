@@ -192,10 +192,10 @@
 }
 
 .anim_left{
-    animation: running-text_left 20s linear infinite;
+    animation: running-text_left 50s linear infinite;
 }
 .anim_rigth{
-    animation: running-text_rigth 20s linear infinite;
+    animation: running-text_rigth 60s linear infinite;
 }
 
 .ul_text_content li{
@@ -530,9 +530,10 @@
     display: flex;
     justify-content:space-evenly;
     column-gap: 20px;
-    align-items: center;
 }
 .business_budss_bottom_list li{
     height: 100%;
     width: fit-content;
+    display: flex;
+    align-items: center;
 }
