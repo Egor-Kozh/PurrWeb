@@ -1,4 +1,9 @@
 .main{
+    width: 100%;
+    height: fit-content;
+}
+
+.main_conteiner{
     width: 1440px;
     height: fit-content;
     margin: 0 auto;
@@ -500,6 +505,10 @@
     height: 100%;
 
     margin-left: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .middle_conteiner_info_tittle{
@@ -512,7 +521,7 @@
 
 .middle_conteiner_info_description{
     width: 540px;
-    height: 68px;
+    height: fit-content;
 
     font-size: 20px;
     font-family: "Outfit_Regular";
