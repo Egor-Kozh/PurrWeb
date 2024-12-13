@@ -19,7 +19,7 @@
     opacity: 0;
     visibility: hidden;
 }
-.modal.active{
+.active{
     opacity: 1;
     visibility: visible;
 }
@@ -45,6 +45,9 @@
 
     top: 15px;
     right: 15px;
+}
+.modal_close:hover{
+    cursor: pointer;
 }
 .modal_close img{
     height: 100%;
