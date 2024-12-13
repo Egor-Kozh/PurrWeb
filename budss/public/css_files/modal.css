@@ -54,7 +54,7 @@
     width: 100%;
 }
 
-.modal_form{
+.modal_content{
     width: 100%;
     height: fit-content;
     min-height: 100%;
@@ -64,7 +64,7 @@
     flex-direction: column;
 }
 
-.modal_form_content{
+.modal_form{
     width: 337px;
     height: 370px;
     
