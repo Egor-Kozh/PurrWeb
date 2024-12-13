@@ -26,3 +26,6 @@ function Close_modal(){
     modal_open.classList.remove("active")    
 }
 
+const modal_submit = document.querySelector(".submit")
+console.log(modal_submit)
+
