@@ -95,6 +95,12 @@
 .form_field label{
     font-family: "Outfit_Medium";
     font-size: 14px;
+    display: flex;
+}
+.form_field label p{
+    color: rgba(255, 108, 45, 1);
+    height: 100%;
+    padding-left: 2px;
 }
 
 .modal_info{
