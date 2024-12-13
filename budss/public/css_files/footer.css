@@ -56,15 +56,6 @@
     display: flex;
     justify-content: space-between;
 }
-.footer_inner_top_but-ref button{
-    max-width: 182;
-    max-height: 57;
-    background-color: rgba(149, 76, 237, 1);
-    padding: 16px 30px;
-    border-radius: 20px;
-    color:white;
-    font-size: 20px;
-}
 
 .footer_inner_top_refs{
     height: 100%;

@@ -21,7 +21,7 @@
 
 body{
     width: 100%;
-    max-width: 1440px;
+    max-width: 100%;
     height: auto;
     margin: 0;
     color:white;
@@ -43,6 +43,27 @@ a{
 
 p{
     margin: 0;
+}
+
+.btn{
+    width: 182;
+    height: 57;
+    background-color: rgba(149, 76, 237, 1);
+    padding: 14px 28px;
+    border-radius: 20px;
+    color:white;
+    font-size: 20px;
+    font-family: "Outfit_SemiBold";
+    border: 2px solid rgba(149, 76, 237, 1);
+}
+
+.btn:hover{
+    background-color: rgba(24, 24, 24, 1);
+    cursor: pointer;
+}
+
+.light:hover{
+    border: 2px solid rgba(24, 24, 24, 1);
 }
 
 

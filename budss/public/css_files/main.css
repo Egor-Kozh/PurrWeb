@@ -1,20 +1,29 @@
 .main{
     width: 100%;
     height: fit-content;
+}
+
+.main_conteiner{
+    width: 1440px;
+    height: fit-content;
+    margin: 0 auto;
+
     display: grid;
+    grid-template-columns: 100%;
+
     row-gap: 100px;
 }
 
 /* Hero */
 
 .main_hero{
-    width: 100%;
+    max-width: 100%;
     height: 600px;
 }
 
 .hero_conteiner{
     padding: 70px 0 0 60px;
-    width: auto;
+    max-width: 100%;
     height: 530px;
     
     display: flex;
@@ -22,8 +31,8 @@
 }
 
 .hero_info{
-    width: 670px;
-    height: 370px;
+    width: 671px;
+    height: 369px;
 }
 
 .hero_tittle{
@@ -188,10 +197,10 @@
 }
 
 .anim_left{
-    animation: running-text_left 20s linear infinite;
+    animation: running-text_left 50s linear infinite;
 }
 .anim_rigth{
-    animation: running-text_rigth 20s linear infinite;
+    animation: running-text_rigth 60s linear infinite;
 }
 
 .ul_text_content li{
@@ -484,15 +493,6 @@
 .top_conteiner_info_button{
     text-align: center;
 }
-.top_conteiner_info_button button{
-    max-width: 182;
-    max-height: 57;
-    background-color: rgba(149, 76, 237, 1);
-    padding: 16px 30px;
-    border-radius: 20px;
-    color:white;
-    font-size: 20px;
-}
 
 .business_budss_middle{
     width: 100%;
@@ -505,6 +505,10 @@
     height: 100%;
 
     margin-left: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .middle_conteiner_info_tittle{
@@ -517,7 +521,7 @@
 
 .middle_conteiner_info_description{
     width: 540px;
-    height: 68px;
+    height: fit-content;
 
     font-size: 20px;
     font-family: "Outfit_Regular";
@@ -535,9 +539,10 @@
     display: flex;
     justify-content:space-evenly;
     column-gap: 20px;
-    align-items: center;
 }
 .business_budss_bottom_list li{
     height: 100%;
     width: fit-content;
+    display: flex;
+    align-items: center;
 }
