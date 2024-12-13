@@ -1,5 +1,3 @@
-
-
 const modal_buttons = document.querySelectorAll(".modal_open")
 for(let i = 0; i < modal_buttons.length; i++){
     const modal_button = modal_buttons[i]
@@ -13,14 +11,27 @@ function Open_modal() {
 }
 
 
+const modal_close_super = document.querySelector(".modal_close_super.btn.light")
+modal_close_super.addEventListener("click", function(e){
+    Close_modal()
+})
 
 const modal_close = document.querySelector(".modal_close")
 modal_close.addEventListener("click", function(e){
     Close_modal()
 })
+
 function Close_modal(){
     const modal_open = document.querySelector(".modal.active")
     modal_open.classList.remove("active")    
+
+    if(document.querySelector(".modal_accept.active_accept")){
+        const modal_next_open = document.querySelector(".modal_accept.active_accept")
+        modal_next_open.classList.remove("active_accept")
+
+        modal_dis = document.querySelector(".modal_content.disabled")
+        modal_dis.classList.remove("disabled")
+    }
 
     const wrong_text = document.querySelectorAll(".wrong")
     for(let i = 0; i < wrong_text.length; i++){
@@ -33,12 +44,6 @@ function Close_modal(){
         wrong_input[i].classList.remove("wrong_input")
     }   
 }
-
-function ClearInput(event){
-
-}
-
-
 
 const modal_submit = document.querySelector(".submit")
 modal_submit.addEventListener("click", function(e){
@@ -56,7 +61,11 @@ modal_submit.addEventListener("click", function(e){
         userList.add_user(new_user)
         userList.show_all_users()
         
-        Close_modal()
+        const modal_content = document.querySelector(".modal_content")
+        modal_content.classList.add("disabled")
+
+        const modal_next = document.querySelector(".modal_accept")
+        modal_next.classList.add("active_accept")
     }
 })
 function CheckInputValue(bool){
