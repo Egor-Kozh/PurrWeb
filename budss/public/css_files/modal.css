@@ -141,6 +141,8 @@
     visibility: hidden;
     opacity: 0;
 
+    height: 80%;
+
     top: 40;
     left: 40;
 
@@ -191,5 +193,4 @@
 }
 .modal_close_super{
     width: 100%;
-    padding: 16px 140px;
 }
