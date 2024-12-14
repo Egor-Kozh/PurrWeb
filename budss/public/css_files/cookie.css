@@ -62,22 +62,22 @@
 
 }
 
-.accept{
+.accept_cookie{
     background-color: rgba(149, 76, 237, 1);
     border: 2px solid rgba(149, 76, 237, 1);
     color: rgba(255, 255, 255, 1);
 }
-.accept:hover{
+.accept_cookie:hover{
     background-color: rgba(24, 24, 24, 1);
     border: 2px solid rgba(24, 24, 24, 1);
     cursor: pointer;
 }
 
-.decline{
+.decline_cookie{
     border: 2px solid rgba(149, 76, 237, 1);
     color: rgba(0, 0, 0, 1);
 }
-.decline:hover{
+.decline_cookie:hover{
     color: rgba(255, 255, 255, 1);
     background-color: rgba(24, 24, 24, 1);
     border: 2px solid rgba(24, 24, 24, 1);

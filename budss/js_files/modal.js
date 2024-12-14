@@ -1,22 +1,3 @@
-setTimeout(() => {
-    const cookie = document.querySelector(".cookie")
-    cookie.classList.add("active_cookie")
-}, 5000)
-
-const cookie_accept = document.querySelector(".accept")
-cookie_accept.addEventListener("click", function(e){
-    Close_cookie()
- }) 
-const cookie_decline = document.querySelector(".decline")
-cookie_decline.addEventListener("click", function(e){
-    Close_cookie()
- }) 
-
-function Close_cookie(){
-    const cookie = document.querySelector(".cookie.active_cookie")
-    cookie.classList.remove("active_cookie")
-}
-
 const modal_buttons = document.querySelectorAll(".modal_open")
 for(let i = 0; i < modal_buttons.length; i++){
     const modal_button = modal_buttons[i]
@@ -100,7 +81,7 @@ function CheckInputValue(bool){
                     const wrong_input = document.getElementById(`${input_required[i].name}`)
                     wrong_input.style.borderColor = "rgba(236, 18, 17, 1)";
                     wrong_input.classList.add("wrong_input")
-                    wrong_input.addEventListener("click" , function Clear(e){
+                    wrong_input.addEventListener("input" , function Clear(e){
                         console.log("clear")
                         wrong_input.classList.remove(".wrong_input")
                         wrong_input.style.borderColor = "rgba(241, 241, 241, 1)";
@@ -111,7 +92,7 @@ function CheckInputValue(bool){
                             document.querySelector(".wrong_modal").remove()
                         }
 
-                        wrong_input.removeEventListener("click", Clear)
+                        wrong_input.removeEventListener("input", Clear)
                     })
 
                     const wrong_text = document.createElement("p")
@@ -139,6 +120,7 @@ function CheckInputValue(bool){
             wrong_text.style.fontFamily = "Outfit_Regular"
             wrong_text.style.height = "20px"
             wrong_text.style.width = "fit-content"
+            wrong_text.style.marginTop = "10px"
 
             const wrong = document.querySelector(".modal_form")
             wrong.appendChild(wrong_text)
@@ -147,31 +129,3 @@ function CheckInputValue(bool){
 
     return flag
 }
-
-class User{
-    constructor({name, email, phone, company, website_url}){
-        this.name = name
-        this.email = email
-        this.phone = phone
-        this.company = company
-        this.website_url = website_url
-    }
-}
-
-class UserList{
-    constructor(){
-        this.user_list = []
-    }
-
-    add_user(user) {
-        this.user_list.push(user)
-    }
-
-    show_all_users(){
-        for(let i = 0; i < this.user_list.length; i++){
-            console.log(this.user_list[i])
-        }
-    }
-}
-
-const userList = new UserList();
