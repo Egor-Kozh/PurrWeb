@@ -81,7 +81,7 @@ function CheckInputValue(bool){
                     const wrong_input = document.getElementById(`${input_required[i].name}`)
                     wrong_input.style.borderColor = "rgba(236, 18, 17, 1)";
                     wrong_input.classList.add("wrong_input")
-                    wrong_input.addEventListener("click" , function Clear(e){
+                    wrong_input.addEventListener("input" , function Clear(e){
                         console.log("clear")
                         wrong_input.classList.remove(".wrong_input")
                         wrong_input.style.borderColor = "rgba(241, 241, 241, 1)";
@@ -92,7 +92,7 @@ function CheckInputValue(bool){
                             document.querySelector(".wrong_modal").remove()
                         }
 
-                        wrong_input.removeEventListener("click", Clear)
+                        wrong_input.removeEventListener("input", Clear)
                     })
 
                     const wrong_text = document.createElement("p")
@@ -120,6 +120,7 @@ function CheckInputValue(bool){
             wrong_text.style.fontFamily = "Outfit_Regular"
             wrong_text.style.height = "20px"
             wrong_text.style.width = "fit-content"
+            wrong_text.style.marginTop = "10px"
 
             const wrong = document.querySelector(".modal_form")
             wrong.appendChild(wrong_text)
