@@ -190,5 +190,6 @@
     
 }
 .modal_close_super{
+    width: 100%;
     padding: 16px 140px;
 }

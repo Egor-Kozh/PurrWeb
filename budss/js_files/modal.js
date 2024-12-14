@@ -1,22 +1,3 @@
-setTimeout(() => {
-    const cookie = document.querySelector(".cookie")
-    cookie.classList.add("active_cookie")
-}, 5000)
-
-const cookie_accept = document.querySelector(".accept")
-cookie_accept.addEventListener("click", function(e){
-    Close_cookie()
- }) 
-const cookie_decline = document.querySelector(".decline")
-cookie_decline.addEventListener("click", function(e){
-    Close_cookie()
- }) 
-
-function Close_cookie(){
-    const cookie = document.querySelector(".cookie.active_cookie")
-    cookie.classList.remove("active_cookie")
-}
-
 const modal_buttons = document.querySelectorAll(".modal_open")
 for(let i = 0; i < modal_buttons.length; i++){
     const modal_button = modal_buttons[i]
@@ -147,31 +128,3 @@ function CheckInputValue(bool){
 
     return flag
 }
-
-class User{
-    constructor({name, email, phone, company, website_url}){
-        this.name = name
-        this.email = email
-        this.phone = phone
-        this.company = company
-        this.website_url = website_url
-    }
-}
-
-class UserList{
-    constructor(){
-        this.user_list = []
-    }
-
-    add_user(user) {
-        this.user_list.push(user)
-    }
-
-    show_all_users(){
-        for(let i = 0; i < this.user_list.length; i++){
-            console.log(this.user_list[i])
-        }
-    }
-}
-
-const userList = new UserList();
