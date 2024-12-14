@@ -28,6 +28,13 @@ body{
     background-color: rgba(24, 24, 24, 1);
 
     font-family: "Outfit_Bold";
+
+    position: absolute;
+}
+
+.website{
+    position: absolute;
+    width: 100%;
 }
 
 ul, li{
@@ -46,8 +53,8 @@ p{
 }
 
 .btn{
-    width: 182;
-    height: 57;
+    width: 182px;
+    height: 57px;
     background-color: rgba(149, 76, 237, 1);
     padding: 14px 28px;
     border-radius: 20px;

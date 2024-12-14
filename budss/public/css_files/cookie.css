@@ -1,0 +1,85 @@
+.cookie{
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 20vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    z-index: 2000;
+
+    opacity: 0;
+    visibility: hidden;
+}
+.active_cookie{
+    opacity: 1;
+    visibility: visible;
+}
+
+.cookie_conteiner{
+    width: 1225px;
+    height: 57px;
+
+    margin: 0 auto 30px auto;
+
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 1);
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.cookie_info{
+    width: 783px;
+    height: 100%;
+
+    color: rgba(56, 56, 56, 1);
+    font-size: 20px;
+    font-family: "Outfit_Light";
+}
+
+.cookie_bottons{
+    width: 272px;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+.cookie_bottons button{
+    width: 124px;
+    height: 57px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-family: "Outfit_SemiBold";
+
+    text-align: center;
+
+}
+
+.accept{
+    background-color: rgba(149, 76, 237, 1);
+    border: 2px solid rgba(149, 76, 237, 1);
+    color: rgba(255, 255, 255, 1);
+}
+.accept:hover{
+    background-color: rgba(24, 24, 24, 1);
+    border: 2px solid rgba(24, 24, 24, 1);
+    cursor: pointer;
+}
+
+.decline{
+    border: 2px solid rgba(149, 76, 237, 1);
+    color: rgba(0, 0, 0, 1);
+}
+.decline:hover{
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(24, 24, 24, 1);
+    border: 2px solid rgba(24, 24, 24, 1);
+    cursor: pointer;
+}

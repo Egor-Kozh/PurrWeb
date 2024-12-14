@@ -1,9 +1,28 @@
+setTimeout(() => {
+    const cookie = document.querySelector(".cookie")
+    cookie.classList.add("active_cookie")
+}, 5000)
+
+const cookie_accept = document.querySelector(".accept")
+cookie_accept.addEventListener("click", function(e){
+    Close_cookie()
+ }) 
+const cookie_decline = document.querySelector(".decline")
+cookie_decline.addEventListener("click", function(e){
+    Close_cookie()
+ }) 
+
+function Close_cookie(){
+    const cookie = document.querySelector(".cookie.active_cookie")
+    cookie.classList.remove("active_cookie")
+}
+
 const modal_buttons = document.querySelectorAll(".modal_open")
 for(let i = 0; i < modal_buttons.length; i++){
     const modal_button = modal_buttons[i]
     modal_button.addEventListener("click", function(e){
-        Open_modal()
-    })
+       Open_modal()
+    }) 
 }
 function Open_modal() {
     const modal = document.querySelector(".modal")
