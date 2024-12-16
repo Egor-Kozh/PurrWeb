@@ -355,11 +355,11 @@
                     </div>
                     <div class="form_field">
                         <label for="email">Email <span>*</span></label>
-                        <input type="email" name="email" id="email" class="input_modal" placeholder="Enter email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" type="email" name="email" id="email" class="input_modal" placeholder="Enter email" required>
                     </div>
                     <div class="form_field">
                         <label for="phone">Phone number <span>*</span></label>
-                        <input type="tel" name="phone" id="phone" class="input_modal" placeholder="+7 987 654 32 10" required pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12">
+                        <input pattern="[0-9]{10}" maxlength="10" type="tel" name="phone" id="phone" class="input_modal" placeholder="+7 987 654 32 10" required>
                     </div>
                     <div class="form_field">
                         <label for="company">Company</label>

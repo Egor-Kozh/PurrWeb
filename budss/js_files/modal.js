@@ -47,8 +47,10 @@ function Close_modal(){
 
 const modal_submit = document.querySelector(".submit")
 modal_submit.addEventListener("click", function(e){
-    let flag = CheckInputValue(true)
-    if(flag){
+    let flag_pat = CheckPatternInput(false)
+    let flag_null = CheckInputValue(true)
+    console.log(flag_pat,flag_null,flag_pat & flag_null)
+    if(flag_pat & flag_null){
         const user_params = {}
         const modal_input = document.querySelectorAll(".input_modal")
         for(let i = 0; i < modal_input.length; i++){
@@ -68,6 +70,8 @@ modal_submit.addEventListener("click", function(e){
         modal_next.classList.add("active_accept")
     }
 })
+
+
 function CheckInputValue(bool){
     const input_required = document.querySelectorAll("[required]")
     let flag = bool
@@ -125,6 +129,27 @@ function CheckInputValue(bool){
             const wrong = document.querySelector(".modal_form")
             wrong.appendChild(wrong_text)
         }
+    }
+
+    return flag
+}
+
+
+function CheckPatternInput (bool){
+    const pattern_input = document.querySelectorAll("[pattern]")
+    let flag = bool
+
+    for(let i = 0; i < pattern_input.length; i++){
+        const pattern = new RegExp(pattern_input[i].pattern, "g")
+        if(pattern.test(pattern_input[i].value)){
+            flag = true
+            pattern_input[i].style.borderColor = "rgba(241, 241, 241, 1)"
+        }
+        else{
+            pattern_input[i].style.borderColor = "yellow"
+            flag = false
+        }
+        
     }
 
     return flag
