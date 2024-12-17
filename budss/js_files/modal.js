@@ -47,27 +47,30 @@ function Close_modal(){
 
 const modal_submit = document.querySelector(".submit")
 modal_submit.addEventListener("click", function(e){
-    let flag_pat = CheckPatternInput(false)
     let flag_null = CheckInputValue(true)
-    console.log(flag_pat,flag_null,flag_pat & flag_null)
-    if(flag_pat & flag_null){
-        const user_params = {}
-        const modal_input = document.querySelectorAll(".input_modal")
-        for(let i = 0; i < modal_input.length; i++){
-            user_params[modal_input[i].name] = modal_input[i].value
-            modal_input[i].value = ""
+
+    if(flag_null){
+        let flag_pat = CheckPatternInput(false)
+
+        if(flag_pat){
+            const user_params = {}
+            const modal_input = document.querySelectorAll(".input_modal")
+            for(let i = 0; i < modal_input.length; i++){
+                user_params[modal_input[i].name] = modal_input[i].value
+                modal_input[i].value = ""
+            }
+
+            const new_user = new User(user_params)
+
+            userList.add_user(new_user)
+            userList.show_all_users()
+            
+            const modal_content = document.querySelector(".modal_content")
+            modal_content.classList.add("disabled")
+
+            const modal_next = document.querySelector(".modal_accept")
+            modal_next.classList.add("active_accept")
         }
-
-        const new_user = new User(user_params)
-
-        userList.add_user(new_user)
-        userList.show_all_users()
-        
-        const modal_content = document.querySelector(".modal_content")
-        modal_content.classList.add("disabled")
-
-        const modal_next = document.querySelector(".modal_accept")
-        modal_next.classList.add("active_accept")
     }
 })
 
@@ -83,12 +86,12 @@ function CheckInputValue(bool){
 
                 if(!document.querySelector(`.wrong_${input_required[i].name}`)){
                     const wrong_input = document.getElementById(`${input_required[i].name}`)
-                    wrong_input.style.borderColor = "rgba(236, 18, 17, 1)";
-                    wrong_input.classList.add("wrong_input")
+                    wrong_input.parentElement.style.borderColor = "rgba(236, 18, 17, 1)";
+                    wrong_input.parentElement.classList.add("wrong_input")
                     wrong_input.addEventListener("input" , function Clear(e){
                         console.log("clear")
-                        wrong_input.classList.remove(".wrong_input")
-                        wrong_input.style.borderColor = "rgba(241, 241, 241, 1)";
+                        wrong_input.parentElement.classList.remove(".wrong_input")
+                        wrong_input.parentElement.style.borderColor = "rgba(241, 241, 241, 1)";
                         const wrong = document.querySelector(`.wrong_${wrong_input.id}`)
                         wrong.remove()
 
@@ -109,7 +112,7 @@ function CheckInputValue(bool){
                     wrong_text.style.height = "20px"
                     wrong_text.style.width = "fit-content"
 
-                    const wrong_field = wrong_input.parentElement
+                    const wrong_field = wrong_input.parentElement.parentElement
                     wrong_field.appendChild(wrong_text)
                 }
             }
@@ -143,10 +146,10 @@ function CheckPatternInput (bool){
         const pattern = new RegExp(pattern_input[i].pattern, "g")
         if(pattern.test(pattern_input[i].value)){
             flag = true
-            pattern_input[i].style.borderColor = "rgba(241, 241, 241, 1)"
+            pattern_input[i].parentElement.style.borderColor = "rgba(241, 241, 241, 1)"
         }
         else{
-            pattern_input[i].style.borderColor = "yellow"
+            pattern_input[i].parentElement.style.borderColor = "yellow"
             flag = false
         }
         
