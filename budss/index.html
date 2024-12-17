@@ -351,23 +351,36 @@
                 <form action="index.html" class="modal_form">
                     <div class="form_field">
                         <label for="name">Name <span>*</span></label>
-                        <input type="text" name="name" id="name" class="input_modal" placeholder="Enter name" required>
+                        <div class="input_modal_div">
+                            <input type="text" name="name" id="name" class="input_modal" placeholder="Enter name" required>
+                        </div>
                     </div>
                     <div class="form_field">
                         <label for="email">Email <span>*</span></label>
-                        <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" type="email" name="email" id="email" class="input_modal" placeholder="Enter email" required>
+                        <div class="input_modal_div">
+                            <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" type="email" name="email" id="email" class="input_modal" placeholder="Enter email" required>
+                        </div>
                     </div>
                     <div class="form_field">
                         <label for="phone">Phone number <span>*</span></label>
-                        <input pattern="[0-9]{10}" maxlength="10" type="tel" name="phone" id="phone" class="input_modal" placeholder="+7 987 654 32 10" required>
+                        <div class="input_modal_div">
+                            <div class="select_country">
+                                <img src="/budss/public/img_files/country_select/russian-federation.svg" alt="">
+                            </div>
+                            <input pattern="[0-9]{10}" maxlength="10" type="tel" name="phone" id="phone" class="input_modal" placeholder="+7 987 654 32 10" required>
+                        </div>
                     </div>
                     <div class="form_field">
                         <label for="company">Company</label>
-                        <input type="text" name="company" id="company" class="input_modal" placeholder="Enter company">
+                        <div class="input_modal_div">
+                            <input type="text" name="company" id="company" class="input_modal" placeholder="Enter company">
+                        </div>
                     </div>
                     <div class="form_field">
                         <label for="website">Website/Store URL</label>
-                        <input type="url" name="website_url" id="website" class="input_modal" placeholder="Enter Website/Store URL">
+                        <div class="input_modal_div">
+                            <input type="url" name="website_url" id="website" class="input_modal" placeholder="Enter Website/Store URL">
+                        </div>
                     </div>
                 </form>
                 <div class="modal_info">
