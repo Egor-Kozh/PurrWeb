@@ -10,7 +10,6 @@ function Open_modal() {
     modal.classList.add("active")    
 }
 
-
 const modal_close_super = document.querySelector(".modal_close_super.btn.light")
 modal_close_super.addEventListener("click", function(e){
     Close_modal()
@@ -23,7 +22,9 @@ modal_close.addEventListener("click", function(e){
 
 function Close_modal(){
     const modal_open = document.querySelector(".modal.active")
-    modal_open.classList.remove("active")    
+    modal_open.classList.remove("active")
+
+    phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "] 
 
     if(document.querySelector(".modal_accept.active_accept")){
         const modal_next_open = document.querySelector(".modal_accept.active_accept")
@@ -47,10 +48,10 @@ function Close_modal(){
 
 const modal_submit = document.querySelector(".submit")
 modal_submit.addEventListener("click", function(e){
+    let flag_pat = CheckPatternInput(false)
     let flag_null = CheckInputValue(true)
 
     if(flag_null){
-        let flag_pat = CheckPatternInput(false)
 
         if(flag_pat){
             const user_params = {}

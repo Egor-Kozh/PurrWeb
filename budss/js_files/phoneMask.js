@@ -1,6 +1,6 @@
 const phone = document.querySelector("#phone")
 
-const phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "] 
+let phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "] 
 
 phone.addEventListener("click", function(e){
     return this.value = phoneMask.join("")
