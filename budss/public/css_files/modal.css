@@ -78,6 +78,8 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
+    row-gap: 10px;
 }
 
 .form_field{
@@ -112,6 +114,8 @@
     font-family: "Outfit_Regular";
 
     border: 0px solid rgba(255, 255, 255, 1);
+
+ 
 }
 .input_modal_div input:focus{
     outline: none;
