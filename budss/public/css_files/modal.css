@@ -171,15 +171,17 @@
     visibility: hidden;
     opacity: 0;
 
-    height: 80%;
+    height: 90%;
 
-    top: 40;
-    left: 40;
+    top: 0;
+    left: 0;
+
+    margin: 40px;
 
     display: grid;
-    grid-template-rows: max-content;
+    grid-template-rows: fit-content;
     grid-template-columns: 100%;
-    row-gap: 20px;
+    row-gap: auto;
 }
 .active_accept{
     visibility: visible;
