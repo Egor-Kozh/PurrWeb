@@ -29,11 +29,10 @@ body{
 
     font-family: "Outfit_Bold";
 
-    position: absolute;
+    position: relative;
 }
 
 .website{
-    position: absolute;
     width: 100%;
 }
 
@@ -53,7 +52,7 @@ p{
 }
 
 .btn{
-    width: 182px;
+    width: 100%;
     height: 57px;
     background-color: rgba(149, 76, 237, 1);
     padding: 14px 28px;
@@ -72,6 +71,7 @@ p{
 .light:hover{
     border: 2px solid rgba(24, 24, 24, 1);
 }
+
 
 
 

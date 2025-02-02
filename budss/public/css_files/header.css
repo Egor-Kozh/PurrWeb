@@ -20,6 +20,7 @@
     height: 100%;
 
     font-family: "Outfit_Medium";
+    font-size: 16px;
 }
 
 .ul_superNavItems li{
@@ -34,6 +35,14 @@
 
 .customers{
     max-width: 185px;
+}
+
+.business a{
+    width: 100%;
+}
+
+.customers a{
+    width: 100%;
 }
 
 .business, .customers a{
@@ -86,4 +95,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.burger_butt{
+    display: none;
+}
+
+@media(max-width: 500px){
+    .ul_superNavItems li{
+        padding: 9px 30px;
+    }
+    .header_superNavItems{
+        margin: 0 16px;
+    }
+    .header-nav{
+        margin: 0 16px;
+    }
+    .nav_butt{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .burger_butt{
+        display: block;
+    }
 }
