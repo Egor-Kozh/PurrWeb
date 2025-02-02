@@ -263,7 +263,7 @@
 }
 
 .ul_text_content{
-    width: 100%;
+    width: fit-content;
     color: rgba(24, 24, 24, 1);
     text-shadow: 1px 0 0 rgba(68, 68, 68, 1), 
     0 1px 0 rgba(68, 68, 68, 1), 
@@ -272,13 +272,14 @@
 
     display: flex;
     flex-direction: row;
+    
 }
 
 .anim_left{
     animation: running-text_left 50s linear infinite;
 }
 .anim_rigth{
-    animation: running-text_rigth 60s linear infinite;
+    animation: running-text_rigth 50s linear infinite;
 }
 
 .ul_text_content li{
@@ -299,23 +300,22 @@
 }
 
 @keyframes running-text_rigth{
-    100%{
-        transform: translateX(-4%);
-    }
-
     0%{
-        transform: translateX(-150%);
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0px);
     }
 } 
 
 @keyframes running-text_left{
     0%{
-        transform: translateX(-4%);
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-50%);
     }
 
-    100%{
-        transform: translateX(-150%);
-    }
 } 
 
 .phone{
