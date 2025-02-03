@@ -3,16 +3,16 @@ setTimeout(() => {
     cookie.classList.add("active_cookie")
 }, 5000)
 
-const cookie_accept = document.querySelector(".accept_cookie")
-cookie_accept.addEventListener("click", function(e){
-    Close_cookie()
+const cookieAccept = document.querySelector(".accept_cookie")
+cookieAccept.addEventListener("click", function(e){
+    closeCookie()
  }) 
-const cookie_decline = document.querySelector(".decline_cookie")
-cookie_decline.addEventListener("click", function(e){
-    Close_cookie()
+const cookieDecline = document.querySelector(".decline_cookie")
+cookieDecline.addEventListener("click", function(e){
+    closeCookie()
  }) 
 
-function Close_cookie(){
+function closeCookie(){
     const cookie = document.querySelector(".cookie.active_cookie")
     cookie.classList.remove("active_cookie")
 }
