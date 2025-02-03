@@ -19,8 +19,8 @@
         </div>
         <div class="block_panel">
             <div class="panel">
-                <button onclick="clock.TurnOn()" class="buttonOn">Start</button>
-                <button onclick="clock.TurnOff()" class="buttonOff">Stop</button>
+                <button onclick="if(clock.canClick && !clock.clockRun){clock.turnOn()}" class="buttonOn">Start</button>
+                <button onclick="if(clock.canClick && clock.clockRun){clock.turnOff()}" class="buttonOff">Stop</button>
             </div>
         </div>
     </div>
