@@ -24,8 +24,6 @@ function closeModal(){
     const modalOpen = document.querySelector(".modal.active")
     modalOpen.classList.remove("active")
 
-    phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "] 
-
     if(document.querySelector(".modal_accept.active_accept")){
         const modalNextOpen = document.querySelector(".modal_accept.active_accept")
         modalNextOpen.classList.remove("active_accept")
@@ -58,6 +56,7 @@ modalSubmit.addEventListener("click", function(e){
             userParams[modalInput[i].name] = modalInput[i].value
             modalInput[i].value = ""
         }
+        copyPhoneMask = phoneMask.slice(0)
 
         const newUser = new User(userParams)
 

@@ -520,7 +520,7 @@
     top: 40px;
     left: 40px;
 }
-.tr .img1{
+.tr .img3{
     position: absolute;
     top: 80px;
     left: 459px;
@@ -530,7 +530,7 @@
     top: 276px;
     left: 394px;
 }
-.tr .img3{
+.tr .img1{
     position: absolute;
     top: 298px;
     left: 72px;
@@ -647,7 +647,7 @@
     
         position: static;
     }
-    .tr .img1{
+    .tr .img3{
         width: 61px;
         position: absolute;
         top: 201px;
@@ -659,7 +659,7 @@
         top: 247px;
         left: 135px;
     }
-    .tr .img3{
+    .tr .img1{
         position: absolute;
         top: 269px;
         left: 10px;
