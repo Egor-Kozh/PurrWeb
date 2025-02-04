@@ -13,7 +13,7 @@
 }
 
 .header_superNavItems{
-    margin: 0 60px;
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
     max-width: 1440px;
@@ -78,10 +78,10 @@
 }
 
 .header-nav{
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
     max-width: 1440px;
-    margin: 0 60px;
 }
 
 .ul_header-nav{
@@ -99,7 +99,7 @@
     font-size: 35px;
 }
 .nav_logo picture{
-    max-height: 51px;
+    max-height: 52px;
 }
 
 .nav_butt{
@@ -115,18 +115,20 @@
 }
 
 @media(max-width: 500px){
+    .nav_logo picture{
+        max-height: 42px;
+    }
     .ul_superNavItems li{
         padding: 9px 30px;
     }
     .header_superNavItems{
-        margin: 0 16px;
+        padding: 0 16px;
     }
     .header-nav{
-        margin: 0 16px;
+        padding: 0 16px;
     }
     .nav_butt{
-        opacity: 0;
-        visibility: hidden;
+        display: none;
     }
     .burger_butt{
         display: block;

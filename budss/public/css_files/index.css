@@ -73,5 +73,21 @@ p{
 }
 
 
+.fiol{
+    position: relative;
+    white-space: nowrap;
+}
+.fiol::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-2deg);
+    top:0;
+    z-index: -1;
+    border-radius: 30px;
+    background-color: rgba(166, 76, 237, 1);
+}
+
 
 

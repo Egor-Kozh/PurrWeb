@@ -24,7 +24,7 @@
 
 .main_hero{
     max-width: 100%;
-    min-height: 600px;
+    height: fit-content;
 }
 
 .hero_conteiner{
@@ -84,6 +84,11 @@
 } 
 
 @media(max-width: 500px){
+    .main_hero{
+        max-width: 100%;
+        height: fit-content;
+        min-height: 600px;
+    }
     .hero_conteiner{
         padding: 70px 16px 0 16px;
         
@@ -95,11 +100,6 @@
     .hero_info{
         width: calc(343/375 * 100%)
     }
-
-    .hero_logo{
-        width: calc(275/375 * 100%);
-    }
-
     .hero_button button{
         width: 100%;
     }
@@ -108,12 +108,13 @@
 /* About */
 
 .main_about{
+    box-sizing: border-box;
     width: 100%;
     min-height: 953px;
+    padding: 0 60px;
 }
 
 .about_tittle{
-    margin-left: 60px;
     font-size: clamp(2.5rem, 1.268rem + 5.26vw, 6rem);
 }
 
@@ -122,12 +123,11 @@
     width: auto;
     height: 760px;
     padding-top: 70px;
-    padding-left: 60px;
 
     display: grid;
     column-gap: 10%;
     grid-template-rows: 100% ;
-    grid-template-columns: max(calc(400 / 1380 * 100%), 273px) auto;
+    grid-template-columns: max(calc(410 / 1320 * 100%), 273px) fit-content(100%);
 }
 
 .left-info_text{
@@ -138,18 +138,6 @@
     font-size: clamp(1.5rem, 1.236rem + 1.13vw, 2.25rem);
 
     font-family: "Outfit_SemiBold";
-}
-.left-info_text::before{
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 40px;
-    bottom: 2px;
-    transform: rotate(-2deg);
-    right: 0;
-    z-index: -1;
-    border-radius: 30px;
-    background-color: rgba(166, 76, 237, 1);
 }
 
 .about_img{
@@ -162,8 +150,8 @@
     display: grid;
     row-gap: 20px;
     column-gap: 60px;
-    grid-template-rows: 350px 350px;
-    grid-template-columns: 380px 380px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .conteiner_item-info{
@@ -188,12 +176,12 @@
 }
 
 @media(max-width: 500px){
-    .about_tittle{
-        margin-left: 16px;
+    .main_about{
+        padding: 0 16px;
     }
 
     .about_conteiner{
-        padding: 40px 16px 0 16px;
+        padding-top: 40px;
         row-gap: 40px;
         align-items: center;
 
@@ -205,6 +193,7 @@
     .conteiner_list-info{
         grid-template-columns: calc(273/375 * 100%);
         grid-template-rows: auto;
+        row-gap: 60px;
     }
 
     .conteiner_left-info{
@@ -221,18 +210,7 @@
         width: 100%;;
         max-height: 89px;
     }
-    .left-info_text::before{
-        content: "";
-        position: absolute;
-        width: calc(235/273 * 100%);
-        height: calc(25/89 * 100%);
-        bottom: calc(0 / 89 * 100%);
-        transform: rotate(-2deg);
-        right: 0;
-        z-index: -1;
-        border-radius: 30px;
-        background-color: rgba(166, 76, 237, 1);
-    }
+
 }
 /* Works */
 
@@ -327,6 +305,7 @@
 
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 @media(max-width: 500px){
@@ -340,13 +319,10 @@
         display: flex;
         justify-content: center;
 
-        width: 228px;
-    }
-    .phone_inner img{
-        width: 100%;
+        width: fit-content;
     }
 }
-
+s
 /*  */
 
 .why_budds_and_buisness_budss{
@@ -426,24 +402,10 @@
 }
 
 .tittle_info{
-    position: relative;
     font-size: clamp(1.5rem, 1.236rem + 1.13vw, 2.25rem);
     text-align: center;
     font-family: "Outfit_SemiBold";
 }       
-
-.tittle_info::before{
-    content: "";
-    position: absolute;
-    width: 380px;
-    height: 40px;
-    bottom: 0px;
-    transform: rotate(-2deg);
-    right: 22%;
-    z-index: -1;
-    border-radius: 30px;
-    background-color: rgba(166, 76, 237, 1);
-}
 
 .why_budss_main{
     max-width: 100%;
@@ -508,7 +470,7 @@
     top: 40px;
     left: 329px;
 }
-.tl img{
+.tl picture{
     position: absolute;
 }
 
@@ -523,7 +485,7 @@
 .tr .img3{
     position: absolute;
     top: 80px;
-    left: 459px;
+    right: 0;
 }
 .tr .img2{
     position: absolute;
@@ -547,7 +509,7 @@
 .bl img{
     position: absolute;
     top: 279px;
-    left: 345px;
+    right: 0;
 }
 
 .br_info{
@@ -558,7 +520,7 @@
     top: 40px;
     left: 40px;
 }
-.br img{
+.br picture{
     position: absolute;
     top: 61px;
     left: 480px;
@@ -569,19 +531,6 @@
         width: 100%;
         height: fit-content;
         margin: 40px auto 0 auto;
-    }
-    .tittle_info::before{
-        content: "";
-        position: absolute;
-        width: calc(320 / 500 * 100%);
-        height: calc(25 / 58 * 100%);
-        bottom: 0px;
-        left: calc(160/ 500 * 100%);
-        transform: rotate(-2deg);
-        right: 22%;
-        z-index: -1;
-        border-radius: 30px;
-        background-color: rgba(166, 76, 237, 1);
     }
     .why_budss_main{
         padding: 40px 16px;
@@ -634,8 +583,7 @@
     
         position: static;
     }
-    .tl img{
-        position: absolute;
+    .tl picture{
         height: 193px;
         left: 0;
         bottom: 0;
@@ -649,18 +597,15 @@
     }
     .tr .img3{
         width: 61px;
-        position: absolute;
         top: 201px;
-        left: 282px;
+        right: 0;
     }
     .tr .img2{
         width: 93px;
-        position: absolute;
         top: 247px;
         left: 135px;
     }
     .tr .img1{
-        position: absolute;
         top: 269px;
         left: 10px;
     }
@@ -672,10 +617,9 @@
         position: static;
     }
     .bl img{
-        position: absolute;
         width: 202px;
         top: 230px;
-        left: 141px;
+        right: 0;
     }
     
     .br_info{
@@ -684,9 +628,8 @@
     
         position: static;
     }
-    .br img{
+    .br picture{
         width: 143px;
-        position: absolute;
         top: 210px;
         left: 145px;
     }

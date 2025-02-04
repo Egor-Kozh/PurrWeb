@@ -46,8 +46,8 @@ function closeModal(){
 
 const modalSubmit = document.querySelector(".submit")
 modalSubmit.addEventListener("click", function(e){
-    let flag_null = checkInputValue(true)
-    let flag_pat = checkPatternInput(false)
+    const flag_null = checkInputValue(true)
+    const flag_pat = checkPatternInput(true)
 
     if(flag_null && flag_pat){
         const userParams = {}
@@ -56,7 +56,8 @@ modalSubmit.addEventListener("click", function(e){
             userParams[modalInput[i].name] = modalInput[i].value
             modalInput[i].value = ""
         }
-        copyPhoneMask = phoneMask.slice(0)
+
+        phoneMask.forEach((el, i) => copyPhoneMask[i] = el);
 
         const newUser = new User(userParams)
 
@@ -76,59 +77,58 @@ function checkInputValue(bool){
     const inputRequired = document.querySelectorAll("[required]")
     let flag = bool
 
-    if(inputRequired){
-        for(let i = 0; i < inputRequired.length; i++){
-            if(!inputRequired[i].value){
-                flag = false
+    for(let i = 0; i < inputRequired.length; i++){
+        if(!inputRequired[i].value){
+            flag = false
 
-                if(!document.querySelector(`.wrong_${inputRequired[i].name}`)){
-                    const wrongInput = document.getElementById(`${inputRequired[i].name}`)
-                    wrongInput.parentElement.style.borderColor = "rgba(236, 18, 17, 1)";
-                    wrongInput.parentElement.classList.add("wrong_input")
-                    wrongInput.addEventListener("input" , function Clear(e){
-                        wrongInput.parentElement.classList.remove("wrong_input")
-                        wrongInput.parentElement.style.borderColor = "rgba(241, 241, 241, 1)";
-                        const wrong = document.querySelector(`.wrong_${wrongInput.id}`)
-                        wrong.remove()
+            if(!document.querySelector(`.wrong_${inputRequired[i].name}`)){
+                const wrongInput = document.getElementById(`${inputRequired[i].name}`)
+                wrongInput.parentElement.style.borderColor = "rgba(236, 18, 17, 1)";
+                wrongInput.parentElement.classList.add("wrong_input")
+                wrongInput.addEventListener("input" , function clear(e){
+                    wrongInput.parentElement.classList.remove("wrong_input")
+                    wrongInput.parentElement.style.borderColor = "rgba(241, 241, 241, 1)";
+                    document.querySelector(`.wrong_${wrongInput.id}`).remove()
+                    
+                    if(document.querySelectorAll(".wrong_req").length == 0){
+                        document.querySelector(".wrong_modal").remove()
+                    }
 
-                        if(document.querySelectorAll(".wrong").length == 1){
-                            document.querySelector(".wrong_modal").remove()
-                        }
+                    wrongInput.removeEventListener("input", clear)
+                })
 
-                        wrongInput.removeEventListener("input", Clear)
-                    })
+                const wrongText = document.createElement("p")
+                wrongText.classList.add(`wrong_${inputRequired[i].name}`)
+                wrongText.classList.add(`wrong_req`)
+                wrongText.classList.add(`wrong`)
+                wrongText.innerHTML = "This field is required."
+                wrongText.style.color = "rgba(236, 18, 17, 1)"
+                wrongText.style.fontSize = "12px"
+                wrongText.style.fontFamily = "Outfit_Regular"
+                wrongText.style.height = "20px"
+                wrongText.style.width = "fit-content"
 
-                    const wrongText = document.createElement("p")
-                    wrongText.classList.add(`wrong_${inputRequired[i].name}`)
-                    wrongText.classList.add(`wrong`)
-                    wrongText.innerHTML = "This field is required."
-                    wrongText.style.color = "rgba(236, 18, 17, 1)"
-                    wrongText.style.fontSize = "12px"
-                    wrongText.style.fontFamily = "Outfit_Regular"
-                    wrongText.style.height = "20px"
-                    wrongText.style.width = "fit-content"
-
-                    const wrongField = wrongInput.parentElement.parentElement
-                    wrongField.appendChild(wrongText)
-                }
+                const wrongField = wrongInput.parentElement.parentElement
+                wrongField.appendChild(wrongText)
             }
         }
-        if(!flag & !document.querySelector(".wrong_modal")){
-            const wrongText = document.createElement("p")
-            wrongText.classList.add("wrong_modal")
-            wrongText.classList.add("wrong")
-            wrongText.innerHTML = "Please fill in all required fields"
-            wrongText.style.color = "rgba(236, 18, 17, 1)"
-            wrongText.style.fontSize = "16px"
-            wrongText.style.fontFamily = "Outfit_Regular"
-            wrongText.style.height = "20px"
-            wrongText.style.width = "fit-content"
-            wrongText.style.marginTop = "10px"
-
-            const wrong = document.querySelector(".modal_form")
-            wrong.appendChild(wrongText)
-        }
     }
+    if(!flag & !document.querySelector(".wrong_modal")){
+        const wrongText = document.createElement("p")
+        wrongText.classList.add("wrong_modal")
+        wrongText.classList.add("wrong")
+        wrongText.innerHTML = "Please fill in all required fields"
+        wrongText.style.color = "rgba(236, 18, 17, 1)"
+        wrongText.style.fontSize = "16px"
+        wrongText.style.fontFamily = "Outfit_Regular"
+        wrongText.style.height = "20px"
+        wrongText.style.width = "fit-content"
+        wrongText.style.marginTop = "10px"
+
+        const wrong = document.querySelector(".modal_form")
+        wrong.appendChild(wrongText)
+    }
+    
 
     return flag
 }
@@ -140,40 +140,36 @@ function checkPatternInput (bool){
 
     for(let i = 0; i < patternInput.length; i++){
         const pattern = new RegExp(patternInput[i].pattern, "g")
-        if(pattern.test(patternInput[i].value)){
-            flag = true
-            patternInput[i].parentElement.style.borderColor = "rgba(241, 241, 241, 1)"
-        }
-        else{
-            if(!patternInput[i].parentElement.classList.contains("wrong_input")){
-                patternInput[i].parentElement.classList.add("wrong_input")
-                const invalidText = document.createElement("p")
-                invalidText.classList.add(`wrong_pattern_${patternInput[i].name}`)
-                invalidText.classList.add("wrong")
-                invalidText.innerHTML = `Invalid ${patternInput[i].name}`
-                invalidText.style.color = "rgba(236, 18, 17, 1)"
-                invalidText.style.fontSize = "12px"
-                invalidText.style.fontFamily = "Outfit_Regular"
-                invalidText.style.height = "20px"
-                invalidText.style.width = "fit-content"
 
-                patternInput[i].addEventListener("input" , function Clear(e){
-                    patternInput[i].parentElement.classList.remove("wrong_input")
-                    patternInput[i].parentElement.style.borderColor = "rgba(241, 241, 241, 1)";
-                    const wrong = document.querySelector(`.wrong_pattern_${patternInput[i].name}`)
-                    wrong.remove()
+        if(!Boolean(pattern.test(patternInput[i].value))){
+            flag = false
 
-                    patternInput[i].removeEventListener("input", Clear)
+            if(!(document.querySelector(`.wrong_pattern_${patternInput[i].name}`)) && !patternInput[i].parentElement.classList.contains("wrong_input")){
+                const wrongPattern = document.getElementById(`${patternInput[i].name}`)
+                wrongPattern.parentElement.style.borderColor = "rgba(236, 18, 17, 1)";
+                wrongPattern.parentElement.classList.add("wrong_input")
+                wrongPattern.addEventListener("input" , function clear(e){
+                    wrongPattern.parentElement.classList.remove("wrong_input")
+                    wrongPattern.parentElement.style.borderColor = "rgba(241, 241, 241, 1)";
+                    document.querySelector(`.wrong_pattern_${wrongPattern.id}`).remove()
+
+                    wrongPattern.removeEventListener("input", clear)
                 })
 
-                const invalidField = patternInput[i].parentElement.parentElement
-                invalidField.appendChild(invalidText)
+                const wrongText = document.createElement("p")
+                wrongText.classList.add(`wrong_pattern_${patternInput[i].name}`)
+                wrongText.classList.add(`wrong`)
+                wrongText.innerHTML = `Invalid ${patternInput[i].name}`
+                wrongText.style.color = "rgba(236, 18, 17, 1)"
+                wrongText.style.fontSize = "12px"
+                wrongText.style.fontFamily = "Outfit_Regular"
+                wrongText.style.height = "20px"
+                wrongText.style.width = "fit-content"
 
-                patternInput[i].parentElement.style.borderColor = "rgba(236, 18, 17, 1)"
+                const wrongField = wrongPattern.parentElement.parentElement
+                wrongField.appendChild(wrongText)
             }
-            flag = false
         }
-        
     }
 
     return flag

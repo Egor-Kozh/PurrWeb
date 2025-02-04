@@ -41,7 +41,7 @@
 }
 
 .footer_inner_top_logo picture{
-    max-height: 51px;
+    max-height: 52px;
 }
 
 .footer_inner_top_switches{
@@ -130,6 +130,9 @@
     .footer_inner_top_switches{
         display: none;
     }
+    .footer_inner_top_logo picture{
+        max-height: 42px;
+    }
     .footer_inner_top_switches_mobile{
         font-size: 20px;
         font-family: "Outfit_Medium";
@@ -146,6 +149,7 @@
     }
     .footer_inner_top_refs{
         flex-direction: column;
+        width: 100%;
         row-gap: 20px;
     }
     .footer_inner_bottom{

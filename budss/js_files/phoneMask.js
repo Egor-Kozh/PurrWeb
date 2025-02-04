@@ -1,8 +1,9 @@
 const phone = document.querySelector("#phone")
 
-const phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "] 
+const phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "]
 
-const copyPhoneMask = phoneMask.slice(0)
+const copyPhoneMask = [];
+phoneMask.forEach((el) => copyPhoneMask.push(el));
 
 phone.addEventListener("click", function(e){
     return this.value = copyPhoneMask.join("")
