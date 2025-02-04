@@ -692,8 +692,10 @@ s
 }
 
 .business_budss_middle{
+    box-sizing: border-box;
     width: 100%;
-    height: 272px;
+    padding: 0 60px;
+    min-height: 272px;
     position: relative;
 
     display: flex;
@@ -701,14 +703,12 @@ s
 }
 
 .business_budss_middle_conteiner{
-    width: calc(822/1440 * 100%);
-    height: 100%;
-
-    margin-left: 60px;
+    width: calc(822/1320 * 100%);
+    min-height: 204px;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    row-gap: 20px;
 }
 
 .business_budss_middle_logos{
@@ -720,7 +720,7 @@ s
 
 .middle_conteiner_info_tittle{
     width: 100%;
-    height: 204px;
+    height: fit-content;
 
     line-height: 101px;
     font-size: clamp(2.5rem, 1.268rem + 5.26vw, 6rem);
@@ -765,6 +765,7 @@ s
     .business_budss_middle{
         flex-direction: column;
         height: fit-content;
+        padding: 0;
     }
     .business_budss_middle_conteiner{
         box-sizing: border-box;

@@ -46,10 +46,10 @@ function closeModal(){
 
 const modalSubmit = document.querySelector(".submit")
 modalSubmit.addEventListener("click", function(e){
-    const flag_null = checkInputValue(true)
-    const flag_pat = checkPatternInput(true)
+    const nullValues = checkInputValue()
+    const patternWrong = checkPatternInput()
 
-    if(flag_null && flag_pat){
+    if(nullValues && patternWrong){
         const userParams = {}
         const modalInput = document.querySelectorAll(".input_modal")
         for(let i = 0; i < modalInput.length; i++){
@@ -73,13 +73,13 @@ modalSubmit.addEventListener("click", function(e){
 })
 
 
-function checkInputValue(bool){
+function checkInputValue(){
     const inputRequired = document.querySelectorAll("[required]")
-    let flag = bool
+    let nullValues = true
 
     for(let i = 0; i < inputRequired.length; i++){
         if(!inputRequired[i].value){
-            flag = false
+            nullValues = false
 
             if(!document.querySelector(`.wrong_${inputRequired[i].name}`)){
                 const wrongInput = document.getElementById(`${inputRequired[i].name}`)
@@ -113,7 +113,7 @@ function checkInputValue(bool){
             }
         }
     }
-    if(!flag & !document.querySelector(".wrong_modal")){
+    if(!nullValues & !document.querySelector(".wrong_modal")){
         const wrongText = document.createElement("p")
         wrongText.classList.add("wrong_modal")
         wrongText.classList.add("wrong")
@@ -130,19 +130,19 @@ function checkInputValue(bool){
     }
     
 
-    return flag
+    return nullValues
 }
 
 
-function checkPatternInput (bool){
+function checkPatternInput (){
     const patternInput = document.querySelectorAll("[pattern]")
-    let flag = bool
+    let patternWrong = true
 
     for(let i = 0; i < patternInput.length; i++){
         const pattern = new RegExp(patternInput[i].pattern, "g")
 
         if(!Boolean(pattern.test(patternInput[i].value))){
-            flag = false
+            patternWrong = false
 
             if(!(document.querySelector(`.wrong_pattern_${patternInput[i].name}`)) && !patternInput[i].parentElement.classList.contains("wrong_input")){
                 const wrongPattern = document.getElementById(`${patternInput[i].name}`)
@@ -172,5 +172,5 @@ function checkPatternInput (bool){
         }
     }
 
-    return flag
+    return patternWrong
 }
