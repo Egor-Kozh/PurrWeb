@@ -16,6 +16,7 @@
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    padding-inline: 60px;
     max-width: 1440px;
 }
 
@@ -82,6 +83,7 @@
     height: 100%;
     width: 100%;
     max-width: 1440px;
+    padding-inline: 60px;
 }
 
 .ul_header-nav{
