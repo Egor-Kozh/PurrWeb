@@ -88,7 +88,9 @@ function checkInputValue(){
                 wrongInput.addEventListener("input" , function clear(e){
                     wrongInput.parentElement.classList.remove("wrong_input")
                     wrongInput.parentElement.style.borderColor = "rgba(241, 241, 241, 1)";
-                    document.querySelector(`.wrong_${wrongInput.id}`).remove()
+                    if(document.querySelector(`.wrong_${wrongInput.id}`)){
+                        document.querySelector(`.wrong_${wrongInput.id}`).remove()
+                    }
                     
                     if(document.querySelectorAll(".wrong_req").length == 0){
                         document.querySelector(".wrong_modal").remove()
@@ -151,7 +153,9 @@ function checkPatternInput (){
                 wrongPattern.addEventListener("input" , function clear(e){
                     wrongPattern.parentElement.classList.remove("wrong_input")
                     wrongPattern.parentElement.style.borderColor = "rgba(241, 241, 241, 1)";
-                    document.querySelector(`.wrong_pattern_${wrongPattern.id}`).remove()
+                    if(document.querySelector(`.wrong_pattern_${wrongPattern.id}`)){
+                        document.querySelector(`.wrong_pattern_${wrongPattern.id}`).remove()
+                    }
 
                     wrongPattern.removeEventListener("input", clear)
                 })

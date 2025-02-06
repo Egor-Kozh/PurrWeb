@@ -20,7 +20,7 @@
 .cookie_conteiner{
     width: calc(1225/1440 * 100%);
     max-width: 1340px;
-    height: 57px;
+    min-height: 57px;
 
     margin: 0 auto 30px auto;
 
@@ -80,6 +80,15 @@
     background-color: rgba(24, 24, 24, 1);
     border: 2px solid rgba(24, 24, 24, 1);
     cursor: pointer;
+}
+
+@media(max-width: 1150px){
+    .cookie_bottons{
+        width: fit-content;
+        flex-direction: column;
+        row-gap: 10px;
+        justify-content: center;
+    }
 }
 
 @media(max-width: 500px){
