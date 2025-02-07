@@ -83,23 +83,32 @@
     width: 100%;
 } 
 
-@media(max-width: 500px){
+@media(max-width: 850px){
     .main_hero{
         min-height: 600px;
     }
     .hero_conteiner{
-        padding: 70px 16px 0 16px;
-        
         flex-direction: column;
         row-gap: 100px;
         align-items: center;
     }
-
     .hero_info{
-        width: calc(343/375 * 100%)
+        width: calc(671/850 * 100%);
+    }
+    .hero_logo{
+        width: calc(595/850 * 100%);
     }
     .hero_button button{
         width: 100%;
+    }
+}
+@media(max-width: 500px){
+    .hero_conteiner{
+        padding: 70px 16px 0 16px;
+    }
+
+    .hero_info{
+        width: calc(343/375 * 100%)
     }
 }
 
