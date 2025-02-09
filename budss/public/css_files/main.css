@@ -478,19 +478,19 @@ s
 
 .tl_info{
     width: calc(364/733 * 100%);
-    height: 272px;
+    min-height: 272px;
 
     position: absolute;
     top: 40px;
     left: 329px;
 }
-.tl picture{
+.tl img{
     position: absolute;
 }
 
 .tr_info{
     width: 416px;
-    height: 236px;
+    min-height: 236px;
 
     position: absolute;
     top: 40px;
@@ -514,7 +514,7 @@ s
 
 .bl_info{
     width: 440px;
-    height: 272px;
+    min-height: 272px;
 
     position: absolute;
     top: 40px;
@@ -528,7 +528,7 @@ s
 
 .br_info{
     width: 402px;
-    height: 236px;
+    min-height: 236px;
 
     position: absolute;
     top: 40px;
@@ -596,7 +596,7 @@ s
     
         position: static;
     }
-    .tl picture{
+    .tl img{
         height: 193px;
         left: 0;
         bottom: 0;
