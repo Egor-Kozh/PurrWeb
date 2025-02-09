@@ -1,38 +1,38 @@
 const phone = document.querySelector("#phone")
 
-let phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "] 
+const phoneMask = ['+7'," ",'_','_','_', " - ", '_','_','_', " - ", '_', '_', " - ", '_', '_', " "]
+
+const copyPhoneMask = [];
+phoneMask.forEach((el) => copyPhoneMask.push(el));
 
 phone.addEventListener("click", function(e){
-    return this.value = phoneMask.join("")
+    return this.value = copyPhoneMask.join("")
 })
 phone.addEventListener("input", function(e) { 
     if((Number(this.value[this.value.length-1]) || this.value[this.value.length-1] == "0")){
         const num = this.value[this.value.length-1]
         
         for(let i = 0; i < phoneMask.length; i++){
-            if(phoneMask[i] == "_"){
-                phoneMask[i] = num;
+            if(copyPhoneMask[i] == "_"){
+                copyPhoneMask[i] = num;
                 break
             }
         }
-
-        phone.value = phoneMask.join("")
     }
-    else{
-        phone.value = phoneMask.join("")
-    }
+    
+    phone.value = copyPhoneMask.join("")
 })
 
 phone.addEventListener("keydown", function(e){
     if(e.key === "Backspace")
     {   
-        for(let i = phoneMask.length-1; i > 0; i--){
-            if(Number(phoneMask[i]) || phoneMask[i] == "0"){
-                phoneMask[i] = "_";
+        for(let i = copyPhoneMask.length-1; i > 0; i--){
+            if(Number(copyPhoneMask[i]) || copyPhoneMask[i] == "0"){
+                copyPhoneMask[i] = "_";
                 break
             }
         }
 
-        phone.value = phoneMask.join("")
+        phone.value = copyPhoneMask.join("")
     }
 })

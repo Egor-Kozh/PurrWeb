@@ -10,16 +10,16 @@ class User{
 
 class UserList{
     constructor(){
-        this.user_list = []
+        this.userList = []
     }
 
-    add_user(user) {
-        this.user_list.push(user)
+    addUser(user) {
+        this.userList.push(user)
     }
 
-    show_all_users(){
-        for(let i = 0; i < this.user_list.length; i++){
-            console.log(this.user_list[i])
+    showAllUsers(){
+        for(let i = 0; i < this.userList.length; i++){
+            console.log(this.userList[i])
         }
     }
 }
