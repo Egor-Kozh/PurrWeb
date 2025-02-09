@@ -36,6 +36,31 @@ body{
     width: 100%;
 }
 
+h1{
+    margin: 0;
+    font-size: clamp(3rem, 1.239rem + 7.51vw, 8rem);
+}
+
+h2{
+    margin: 0;
+    font-size: clamp(2.5rem, 1.268rem + 5.26vw, 6rem);
+}
+
+h3{
+    margin: 0;
+    font-size: clamp(2.5rem, 1.972rem + 2.25vw, 4rem)
+}
+
+h4{
+    margin: 0;
+    font-size: clamp(2rem, 1.648rem + 1.5vw, 3rem);
+}
+
+h5{
+    margin: 0;
+    font-size: clamp(2rem, 1.648rem + 1.5vw, 3rem);
+}
+
 ul, li{
     list-style: none;
     margin: 0;
